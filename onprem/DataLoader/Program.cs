@@ -216,8 +216,7 @@
 
             if (!Directory.Exists(rideDataFilePath))
             {
-                console.WriteLine($"data - {rideDataFilePath}");
-                throw new ArgumentException("ride file path doesnot exists");
+                throw new ArgumentException($"ride file path doesnot exists {rideDataFilePath}");
             }
             // get only the ride files in order. trip_data_1.zip gets read before trip_data_2.zip
             var rideDataFiles = Directory.EnumerateFiles(rideDataFilePath)
