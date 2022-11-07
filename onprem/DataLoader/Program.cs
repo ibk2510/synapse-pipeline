@@ -56,7 +56,7 @@
             // buffer block that holds the messages . consumer will fetch records from this block asynchronously.
             BufferBlock<T> buffer = new BufferBlock<T>(new DataflowBlockOptions()
             {
-                BoundedCapacity = 100000
+                BoundedCapacity = 100
             });
 
             // consumer that sends the data to event hub asynchronoulsy.
@@ -79,7 +79,7 @@
                 },
                 new ExecutionDataflowBlockOptions
                 {
-                    BoundedCapacity = 100000,
+                    BoundedCapacity = 100,
                     CancellationToken = cts.Token,
                     MaxDegreeOfParallelism = 100,
                 }
